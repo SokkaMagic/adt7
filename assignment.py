@@ -27,12 +27,33 @@ def OutputNodes():
 # Exercise 2
 def InsertInOrder(Item):
     global FirstNode, FirstEmpty
+
     if FirstEmpty == -1:
         return False
 
     NewNode = FirstEmpty
     FirstEmpty = LinkedList[FirstEmpty][1]
     LinkedList[NewNode][0] = Item
+
+    if FirstNode == -1:
+        LinkedList[NewNode][1] = -1
+        FirstNode = NewNode
+        return True
+
+    if Item < LinkedList[FirstNode][0]:
+        LinkedList[NewNode][1] = FirstNode
+        FirstNode = NewNode
+        return True
+
+    CurrentNode = FirstNode
+
+    while LinkedList[CurrentNode][1] != -1 and LinkedList[LinkedList[CurrentNode][1]][0] <= Item:
+        CurrentNode = LinkedList[CurrentNode][1]
+
+    LinkedList[NewNode][1] = LinkedList[CurrentNode][1]
+    LinkedList[CurrentNode][1] = NewNode
+
+    return True
 
 
 # Exercise 3
