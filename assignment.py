@@ -15,10 +15,14 @@ def Initialise():
     LinkedList[9][1] = -1
 
 def OutputNodes():
-    print(LinkedList[0][0])
-    for i in range(len(LinkedList)-1,1,1):
-        print(LinkedList[LinkedList[i][1]][0])
+    if FirstNode == -1:
+        print("Linked list is empty")
+    else:
+        CurrentNode = FirstNode
 
+        while CurrentNode != -1:
+            print(LinkedList[CurrentNode][0])
+            CurrentNode = LinkedList[CurrentNode][1]
 
 # Exercise 2
 def InsertInOrder(Item):
