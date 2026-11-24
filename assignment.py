@@ -1,5 +1,3 @@
-# You can remove 'pass' if you written code in the function
-# Each node is a list: [Data, Pointer]. A pointer of -1 means "points to nothing".
 
 LinkedList = []
 FirstNode = -1
@@ -8,9 +6,13 @@ FirstEmpty = 0
 
 # Exercise 1
 def Initialise():
-    # Write your code here
-    pass
-
+    global FirstNode,FirstEmpty,LinkedList
+    LinkedList = []
+    FirstNode = -1
+    FirstEmpty = 0
+    for x in range(10):
+        LinkedList.append([-1, x + 1])
+    LinkedList[9][1] = -1
 
 def OutputNodes():
     # Write your code here
