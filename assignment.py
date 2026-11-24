@@ -15,8 +15,9 @@ def Initialise():
     LinkedList[9][1] = -1
 
 def OutputNodes():
-    # Write your code here
-    pass
+    print(LinkedList[0][0])
+    for i in range(len(LinkedList)-1,1,1):
+        print(LinkedList[LinkedList[i][1]][0])
 
 
 # Exercise 2
