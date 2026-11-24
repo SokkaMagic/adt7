@@ -26,8 +26,13 @@ def OutputNodes():
 
 # Exercise 2
 def InsertInOrder(Item):
-    # Write your code here
-    pass
+    global FirstNode, FirstEmpty
+    if FirstEmpty == -1:
+        return False
+
+    NewNode = FirstEmpty
+    FirstEmpty = LinkedList[FirstEmpty][1]
+    LinkedList[NewNode][0] = Item
 
 
 # Exercise 3
